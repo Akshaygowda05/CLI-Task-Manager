@@ -26,9 +26,24 @@ pub struct Task {
 imple Task{
     pub fn new (title:&str,priority:Priority)->Self{
         Task {
-            id:Uuid::new_v4();
+            id:Uuid::new_v4(),
+            title:title.to_string(),
+            priority,
+            status:Status::Todo,
+            created_at:Utc::npw()
+
         }
 
+
+    }
+
+    pub fn mark_done(&mut self){
+        self.status = Status::Done;
+
+    }
+
+    pub fn is_done($self)->bool{
+        self.status==Status::Done
 
     }
 }
