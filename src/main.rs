@@ -1,5 +1,7 @@
 mod model;
+mod error;
 use model::{Priority,Task};
+use error::{TaskError};
 
 
 fn main(){
